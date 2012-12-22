@@ -15,7 +15,7 @@ public class MainActivity extends Activity {
         
         // Declare our view variables
         TextView answerLabel = (TextView) findViewById(R.id.textView1);
-        Button getAnswerButton;
+        Button getAnswerButton = (Button) findViewById(R.id.button1);
         
     }
 
