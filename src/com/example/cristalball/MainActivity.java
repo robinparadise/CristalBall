@@ -1,5 +1,7 @@
 package com.example.cristalball;
 
+import java.util.Random;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -22,7 +24,13 @@ public class MainActivity extends Activity {
 			
 			public void onClick(View v) {
 				// The button was clicked, so update the label text to the answer
-				String answer = "Yes";
+				String answer = "";
+				
+				// Randomly select one of the three answers: YES, NO, MAYBE
+				Random randomGenerator = new Random(); // construct a new Random Number Generator
+				
+				
+				// Update the answer with our dinamic answer
 				answerLabel.setText(answer);				
 			}
 		});
