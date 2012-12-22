@@ -28,7 +28,8 @@ public class MainActivity extends Activity {
 				
 				// Randomly select one of the three answers: YES, NO, MAYBE
 				Random randomGenerator = new Random(); // construct a new Random Number Generator
-				
+				int randomNumber = randomGenerator.nextInt(3);
+				answer = Integer.toString(randomNumber);
 				
 				// Update the answer with our dinamic answer
 				answerLabel.setText(answer);				
