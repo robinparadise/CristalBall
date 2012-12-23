@@ -1,10 +1,12 @@
 package com.example.cristalball;
 
 import android.app.Activity;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
@@ -25,10 +27,22 @@ public class MainActivity extends Activity {
 				String answer = mCrystalBall.getAnAnswer();
 				
 				// Update the answer with our dinamic answer
-				answerLabel.setText(answer);				
+				answerLabel.setText(answer);
+				// Animate the crystal ball
+				animateCrystalBall();
 			}
 		});
         
+    }
+    
+    private void animateCrystalBall() {
+    	ImageView crystalBallImage = (ImageView) findViewById(R.id.imageView1);
+    	crystalBallImage.setImageResource(R.drawable.ball_animation);
+    	AnimationDrawable ballAnimation = (AnimationDrawable) crystalBallImage.getDrawable();
+    	if (ballAnimation.isRunning()) {
+    		ballAnimation.stop();
+    	}
+    	ballAnimation.start();
     }
 
     @Override
