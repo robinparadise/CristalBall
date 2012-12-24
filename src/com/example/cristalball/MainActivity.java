@@ -7,6 +7,7 @@ import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.animation.AlphaAnimation;
 import android.widget.ImageView;
@@ -15,6 +16,8 @@ import android.widget.TextView;
 import com.example.cristalball.ShakeDetector.OnShakeListener;
 
 public class MainActivity extends Activity {
+	
+	public static final String TAG = MainActivity.class.getName();
 
 	private CrystalBall mCrystalBall = new CrystalBall();
 	private TextView mAnswerLabel;
@@ -40,6 +43,14 @@ public class MainActivity extends Activity {
 				handleNewAnswer();
 			}
 		});
+        
+        //Toast.makeText(this, "Yay! Our Activity was created!", Toast.LENGTH_LONG).show();
+        
+        //Toast welcomeToast = Toast.makeText(this, "Look at me", Toast.LENGTH_LONG);
+        //welcomeToast.setGravity(Gravity.TOP, 0, 0);
+        //welcomeToast.show();
+        
+        Log.d(TAG, "We're logging from the onCreate() method!");
     }
     
     @Override
